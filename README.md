@@ -40,4 +40,14 @@ const drawStar = (ctx, x, y, outerRadius, innerRadius = outerRadius / 2, spikes 
         rotation += step; // 次の頂点へ向けて回転
     }
 };
+
+// 使い方
+let ctx = canvas.getContext('2d');
+ctx.beginPath(); // パスの開始
+drawStar(ctx, 100, 100, 50); // 星を描く
+ctx.strokeStyle = "black"; // 線の色
+ctx.lineWidth = 3; // 線の太さ
+ctx.fillStyle = "gold"; // 星の色
+ctx.stroke(); // 線を描く
+ctx.fill(); // 塗りつぶす
 ```
