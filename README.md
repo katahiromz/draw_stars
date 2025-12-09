@@ -22,7 +22,6 @@ JavaScriptで星を描きます。
 const drawStar = (ctx, x, y, outerRadius, innerRadius = outerRadius / 2, spikes = 5, rotation = Math.PI * 1.5) => {
     const step = Math.PI / spikes;    // 頂点とくぼみの角度の間隔 (1/2角)
     let first = true; // 最初の描画か？
-    ctx.beginPath();
     for (let i = 0; i < spikes; i++) {
         // 1. 頂点の計算 (外径)
         let x0 = x + outerRadius * Math.cos(rotation);
@@ -40,6 +39,5 @@ const drawStar = (ctx, x, y, outerRadius, innerRadius = outerRadius / 2, spikes 
         ctx.lineTo(x1, y1);
         rotation += step; // 次の頂点へ向けて回転
     }
-    ctx.closePath();
 };
 ```

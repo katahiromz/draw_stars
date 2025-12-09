@@ -109,7 +109,6 @@
         const drawStar = (ctx, x, y, outerRadius, innerRadius = outerRadius / 2, spikes = 5, rotation = Math.PI * 1.5) => {
             const step = Math.PI / spikes;    // 頂点とくぼみの角度の間隔 (1/2角)
             let first = true; // 最初の描画か？
-            ctx.beginPath();
             for (let i = 0; i < spikes; i++) {
                 // 1. 頂点の計算 (外径)
                 let x0 = x + outerRadius * Math.cos(rotation);
@@ -127,22 +126,21 @@
                 ctx.lineTo(x1, y1);
                 rotation += step; // 次の頂点へ向けて回転
             }
-            ctx.closePath();
         };
 
         /**
-         * オブジェクトの配列を受け取り、それらを線で結び、各位置に円を描画する。
+         * オブジェクトの配列を受け取り、それらを線で結び、各位置にオブジェクトを描画する。
          * * @param {CanvasRenderingContext2D} ctx - 描画に使用するCanvas 2Dコンテキスト（グローバルに定義されていると想定）。
          * @param {MovingObject[]} objects - 描画するオブジェクトの配列。各オブジェクトはpositionプロパティを持つ。
          */
         const drawObjects = (ctx, objects) => {
-            // オブジェクトの位置に複数の丸を描画する
+            // 複数の星を描画する
             ctx.strokeStyle = "black";
             ctx.lineWidth = 3;
             ctx.fillStyle = "gold";
             for (let obj of objects) {
                 ctx.beginPath();
-                drawStar(ctx, obj.position.x, obj.position.y, obj.outerRadius);
+                drawStar(ctx, obj.position.x, obj.position.y, obj.outerRadius, obj.outerRadius/2, 5);
                 ctx.stroke();
                 ctx.fill();
             }
