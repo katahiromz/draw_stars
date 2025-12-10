@@ -11,7 +11,7 @@ JavaScriptで星を描きます。
 ```js
 /**
  * Canvasに指定したパラメータで星を描画します。
- * * @param {CanvasRenderingContext2D} ctx - canvas.getContext('2d')
+ * @param {CanvasRenderingContext2D} ctx - canvas.getContext('2d')
  * @param {number} x - 星の中心のX座標
  * @param {number} y - 星の中心のY座標
  * @param {number} outerRadius - 星の角までの半径（外径）
