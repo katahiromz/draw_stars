@@ -38,7 +38,7 @@
 
         /**
          * オブジェクト群を作成する。
-         * * @global {number} width - 描画領域の幅（初期位置と速度の範囲設定に使用）。
+         * @global {number} width - 描画領域の幅（初期位置と速度の範囲設定に使用）。
          * @global {number} height - 描画領域の高さ（初期位置と速度の範囲設定に使用）。
          */
         const createObjects = () => {
@@ -64,7 +64,7 @@
         /**
          * オブジェクト群を現在の速度と経過時間に基づいて動かし、
          * 境界 (0, 0) から (width, height) までの範囲で壁との衝突判定と反射を行う。
-         * * @param {MovingObject[]} objects - 動かす対象のオブジェクトの配列。各オブジェクトはpositionとvelocityプロパティを持つ。
+         * @param {MovingObject[]} objects - 動かす対象のオブジェクトの配列。各オブジェクトはpositionとvelocityプロパティを持つ。
          * @param {number} diff_time - 前回の更新からの経過時間 (ミリ秒)。
          * @param {number} width - 描画領域の幅 (グローバル変数として定義されていると想定)。
          * @param {number} height - 描画領域の高さ (グローバル変数として定義されていると想定)。
@@ -98,7 +98,7 @@
 
         /**
          * Canvasに指定したパラメータで星を描画します。
-         * * @param {CanvasRenderingContext2D} ctx - canvas.getContext('2d')
+         * @param {CanvasRenderingContext2D} ctx - canvas.getContext('2d')
          * @param {number} x - 星の中心のX座標
          * @param {number} y - 星の中心のY座標
          * @param {number} outerRadius - 星の角までの半径（外径）
@@ -130,7 +130,7 @@
 
         /**
          * オブジェクトの配列を受け取り、それらを線で結び、各位置にオブジェクトを描画する。
-         * * @param {CanvasRenderingContext2D} ctx - 描画に使用するCanvas 2Dコンテキスト（グローバルに定義されていると想定）。
+         * @param {CanvasRenderingContext2D} ctx - 描画に使用するCanvas 2Dコンテキスト（グローバルに定義されていると想定）。
          * @param {MovingObject[]} objects - 描画するオブジェクトの配列。各オブジェクトはpositionプロパティを持つ。
          */
         const drawObjects = (ctx, objects) => {
